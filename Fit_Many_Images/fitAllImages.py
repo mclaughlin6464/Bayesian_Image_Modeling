@@ -72,6 +72,9 @@ for baseName in baseNames:
         c = (int(cy), int(cx))
         i_fit = i_fit*images['g'][c]/images['i'][c]#rescale the i fit.
 
+        #save i_fit to text for use later
+        import numpy as np
+        np.savetxt('residualArrays/'+baseName, g_image-i_fit, delimiter = ',')
         #below, plot and save.
         fig = plt.figure()
         fig.suptitle(baseName)
